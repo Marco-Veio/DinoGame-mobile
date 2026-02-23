@@ -4,14 +4,12 @@ import { Image, StyleSheet } from "react-native";
 import Animated, {
   Easing,
   useAnimatedStyle,
-  useSharedValue,
   withSequence,
   withTiming,
 } from "react-native-reanimated";
 
 export default function Dino() {
-  const { jumping, stopJump } = useGame();
-  const dinoHeight = useSharedValue(0);
+  const { jumping, stopJump, dinoHeight } = useGame();
 
   function handleJump() {
     dinoHeight.value = withSequence(
